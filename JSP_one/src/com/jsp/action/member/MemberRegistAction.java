@@ -17,7 +17,6 @@ public class MemberRegistAction implements Action{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String url="/member/regist_success";		
-		//request.setCharacterEncoding("UTF-8");		
 		
 		String[] phoneArray=request.getParameterValues("phone");
 		String phone = phoneArray[0]+phoneArray[1]+phoneArray[2];

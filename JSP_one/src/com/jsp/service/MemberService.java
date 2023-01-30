@@ -2,6 +2,9 @@ package com.jsp.service;
 
 import java.util.Map;
 
+import com.jsp.command.SearchCriteria;
+import com.jsp.dto.MemberVO;
+
 
 public interface MemberService {
 

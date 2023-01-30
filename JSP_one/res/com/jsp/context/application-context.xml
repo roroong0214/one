@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+	<!-- datasource -->
+	<bean id="sqlSessionFactory"
+		  class="com.jsp.datasource.MySqlSessionFactory" />
+		  
+	<!-- Repository -->
+	<bean id="memberDAO" class="com.jsp.dao.MemberDAOImpl" />
+	
+	<bean id="memberService"
+	      class="com.jsp.service.MemberServiceImpl" >
+	    <property name="sqlSessionFactory"  ref-value="sqlSessionFactory"/>
+		<property name="memberDAO"  ref-value="memberDAO"/>      
+	</bean>
+</beans>
+
+
+
+
+

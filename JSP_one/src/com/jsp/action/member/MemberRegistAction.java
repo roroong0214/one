@@ -26,9 +26,6 @@ public class MemberRegistAction implements Action{
 		member.setId(request.getParameter("id"));
 		member.setPwd(request.getParameter("pwd"));
 		member.setName(request.getParameter("name"));
-		member.setEmail(request.getParameter("email"));
-		member.setPicture(request.getParameter("picture"));
-		member.setAuthority(request.getParameter("authority"));
 		member.setPhone(phone);
 		
 		

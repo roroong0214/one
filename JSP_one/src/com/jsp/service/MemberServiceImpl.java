@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.jsp.command.PageMaker;
+import com.jsp.command.SearchCriteria;
+import com.jsp.dao.MemberDAO;
 import com.jsp.dto.MemberVO;
 
 public class MemberServiceImpl implements MemberService {
@@ -80,7 +82,7 @@ public class MemberServiceImpl implements MemberService {
 	public void modify(MemberVO member) throws Exception {
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
-			MemberDAO.update(session,member);
+			memberDAO.updateMember(session, member);
 		}finally {
 			if (session != null)
 				session.close();
@@ -99,5 +101,5 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 		
-	}
 }
+

@@ -33,18 +33,10 @@ public class HandlerMapper {
 			Action commandAction = (Action)actionClass.newInstance();
 			
 			
-			//의존주입(service, dao.......)
-			//의존성 확인 및 조립
 			Method[] methods = actionClass.getMethods();
 			for (Method method : methods) {
 				if (method.getName().indexOf("set")==0) {
 					
-					// setter name으로 주입기준
-//					String paramName = method.getName().substring(3);
-//					paramName=paramName.substring(0,1).toLowerCase()
-//							 +paramName.substring(1);
-					
-					//setter parameter type으로 주입기준 
 					String paramName=method.getParameterTypes()[0].getName();
 					paramName=paramName.substring(paramName.lastIndexOf(".")+1);
 					paramName=(paramName.charAt(0) + "").toLowerCase() + 
@@ -58,7 +50,6 @@ public class HandlerMapper {
 				}
 			}
 			
-			//container 구성
 			commandMap.put(command, commandAction);
 			System.out.println("[HandlerMapper] url:"+command+"\tAction:"+commandAction);
 			

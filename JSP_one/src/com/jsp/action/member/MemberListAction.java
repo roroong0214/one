@@ -11,7 +11,7 @@ import com.jsp.service.MemberService;
 
 public class MemberListAction implements Action {
 	
-	private MemberService service;// = new MemberServiceImpl();
+	private MemberService service;
 	public void setMemberService(MemberService service) { 
 		this.service = service;
 	}
